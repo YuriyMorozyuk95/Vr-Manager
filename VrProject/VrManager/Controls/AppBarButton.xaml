@@ -1,0 +1,81 @@
+﻿<UserControl x:Class="VrManager.Controls.AppBarButton"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:VrManager.Controls"
+             mc:Ignorable="d" 
+             KeyboardNavigation.IsTabStop="False"
+                     FocusManager.IsFocusScope="False"
+             >
+    <Button Name="Shell"
+                    Content="Добавить" 
+                    Style="{DynamicResource MetroCircleButtonStyle}" 
+                    Click="Shell_Click"
+                    KeyboardNavigation.IsTabStop="False"
+                    KeyboardNavigation.TabNavigation="Continue"
+                     FocusManager.IsFocusScope="False"
+                    >
+        <Button.Template>
+            <ControlTemplate>
+                
+                <StackPanel>
+                    <Button  KeyboardNavigation.IsTabStop="False"
+                    KeyboardNavigation.TabNavigation="Continue"
+                     FocusManager.IsFocusScope="False"
+                             Name="ButtonBorder" Width="{Binding Path=ButtonWidth}" Height="{Binding Path=ButtonHeight}" Style="{DynamicResource MetroCircleButtonStyle}" BorderBrush="{Binding Path=ForegroundColor}" > <!--Background="{DynamicResource ColorBackground}"-->
+                        <TextBlock Name="ContentIcon" Text="{Binding Path=Icon}" FontSize="{Binding Path=FontSizeIcon}" FontFamily="{Binding FontIcon}" Foreground="{Binding Path=ForegroundColor}" />
+                    </Button>
+                    <TextBlock Name="ContentText" Text="{Binding Path=Text}"
+                               Foreground="{Binding Path=ForegroundColor}"
+                               FontSize="{Binding Path=FontSizeText}"
+                               HorizontalAlignment="Center" 
+                               TextWrapping="Wrap"
+                               Margin="2"/>
+                </StackPanel>
+                
+                <ControlTemplate.Triggers>
+                    
+                    <Trigger Property="IsMouseOver" Value="True">
+                        <Setter TargetName="ContentIcon"
+                                Property="Foreground"
+                                Value="{DynamicResource AccentColorBrush}" />
+                        <Setter TargetName="ButtonBorder"
+                                Property="BorderBrush"
+                                Value="{DynamicResource AccentColorBrush}" />
+                        <Setter TargetName="ContentText"
+                                Property="Foreground"
+                                Value="{DynamicResource AccentColorBrush}" />
+                    </Trigger>
+                    
+                    <Trigger Property="Button.IsPressed" Value="True">
+                        <Setter TargetName="ContentIcon"
+                                Property="Foreground"
+                                Value="{DynamicResource AccentColorBrush}" />
+                        <Setter TargetName="ContentText"
+                                Property="Foreground"
+                                Value="{DynamicResource AccentColorBrush}" />
+                        <Setter TargetName="ButtonBorder"
+                                Property="Opacity"
+                                Value="0.6" />
+                        <Setter TargetName="ContentText"
+                                Property="Opacity"
+                                Value="0.6" />
+                       
+                    </Trigger>
+                    
+                    <Trigger Property="Button.IsEnabled" Value="False">
+                        <Setter TargetName="ContentIcon"
+                                Property="Foreground"
+                                Value="#606060" />
+                        <Setter TargetName="ContentText"
+                                Property="Foreground"
+                                Value="#606060" />
+                    </Trigger>
+                    
+                </ControlTemplate.Triggers>
+                
+            </ControlTemplate>
+        </Button.Template>
+    </Button>
+</UserControl>

@@ -1,0 +1,52 @@
+﻿<UserControl x:Class="VrPlayer.Effects.Anaglyph.AnaglyphPanel"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:converters="clr-namespace:VrPlayer.Helpers.Converters;assembly=VrPlayer.Helpers"
+             mc:Ignorable="d" 
+             d:DesignHeight="300" d:DesignWidth="300">
+    <UserControl.Resources>
+        <converters:EnumMatchToBooleanConverter x:Key="enumConverter" />
+    </UserControl.Resources>
+    <StackPanel Orientation="Vertical" Margin="16">
+        <TextBlock Text="Stereo mode" FontWeight="Bold" Margin="0,0,0,8"></TextBlock>
+        <Grid Margin="0,0,0,16">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto" />
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="Auto" />
+            </Grid.ColumnDefinitions>
+            <StackPanel Grid.Column="0" Grid.Row="0">
+                <RadioButton GroupName="StereoMode" Content="Side by side"
+                             IsChecked="{Binding Path=StereoMode, Mode=TwoWay, 
+                                 Converter={StaticResource enumConverter},
+                                 ConverterParameter='2'}"/>
+                <RadioButton GroupName="StereoMode" Content="Over / Under"
+                             IsChecked="{Binding Path=StereoMode, Mode=TwoWay, 
+                                 Converter={StaticResource enumConverter},
+                                 ConverterParameter='1'}"/>
+            </StackPanel>
+        </Grid>
+        <TextBlock Text="Anaglyph type" FontWeight="Bold" Margin="0,0,0,8"></TextBlock>
+        <Grid Margin="0,0,0,16">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto" />
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="Auto" />
+            </Grid.ColumnDefinitions>
+            <StackPanel Grid.Column="0" Grid.Row="0">
+                <RadioButton GroupName="AnaglyphMode" Content="Red-Blue"
+                             IsChecked="{Binding Path=AnaglyphMode, Mode=TwoWay, 
+                                 Converter={StaticResource enumConverter},
+                                 ConverterParameter='0'}"/>
+                <RadioButton GroupName="AnaglyphMode" Content="Blue-Red"
+                             IsChecked="{Binding Path=AnaglyphMode, Mode=TwoWay, 
+                                 Converter={StaticResource enumConverter},
+                                 ConverterParameter='1'}"/>
+            </StackPanel>
+        </Grid>
+    </StackPanel>
+</UserControl>

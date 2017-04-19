@@ -1,0 +1,64 @@
+﻿<helpers:FullScreenWindow x:Class="VrPlayer.Views.ViewPorts.ExternalViewPort"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:converters="clr-namespace:VrPlayer.Helpers.Converters;assembly=VrPlayer.Helpers"
+        xmlns:helpers="clr-namespace:VrPlayer.Helpers;assembly=VrPlayer.Helpers"
+        Title="External View Port (Right)" 
+        Background="Black" 
+        Icon="../../vrplayer.ico">
+    <helpers:FullScreenWindow.Resources>
+        <converters:ThicknessMultiConverter x:Key="ThicknessMulti" />
+    </helpers:FullScreenWindow.Resources>
+    <helpers:FullScreenWindow.Effect>
+        <Binding Path="State.DistortionPlugin.Content"/>
+    </helpers:FullScreenWindow.Effect>
+    <Border Background="Black" ClipToBounds="True">
+        <Viewport3D IsHitTestVisible="False" RenderOptions.EdgeMode="Aliased" ClipToBounds="False">
+            <Viewport3D.Margin>
+                <MultiBinding Converter="{StaticResource ThicknessMulti}" ConverterParameter="-1">
+                    <Binding Path="Config.ViewportsHorizontalOffset" />
+                    <Binding Path="Config.ViewportsVerticalOffset" />
+                </MultiBinding>
+            </Viewport3D.Margin>
+            <Viewport3D.Camera>
+                <PerspectiveCamera UpDirection="0,1,0" LookDirection="0,0,1" Position="{Binding Path=State.ProjectionPlugin.Projection.CameraRightPosition}" FieldOfView="{Binding Path=Config.CameraFieldOfView}">
+                    <PerspectiveCamera.Transform>
+                        <Transform3DGroup>
+                            <TranslateTransform3D OffsetY="{Binding Path=Config.NeckHeight}"></TranslateTransform3D>
+                            <RotateTransform3D>
+                                <RotateTransform3D.Rotation>
+                                    <QuaternionRotation3D Quaternion="{Binding Path=State.TrackerPlugin.Content.Rotation}"/>
+                                </RotateTransform3D.Rotation>
+                            </RotateTransform3D>
+                            <TranslateTransform3D OffsetX="{Binding Path=State.ProjectionPlugin.Content.CameraRightPosition.X}"
+                                                  OffsetY="{Binding Path=State.ProjectionPlugin.Content.CameraRightPosition.Y}"
+                                                  OffsetZ="{Binding Path=State.ProjectionPlugin.Content.CameraRightPosition.Z}">
+                            </TranslateTransform3D>
+                        </Transform3DGroup>
+                    </PerspectiveCamera.Transform>
+                </PerspectiveCamera>
+            </Viewport3D.Camera>
+            <ModelVisual3D>
+                <ModelVisual3D.Content>
+                    <AmbientLight Color="White"></AmbientLight >
+                </ModelVisual3D.Content>
+            </ModelVisual3D>
+            <ModelVisual3D Content="{Binding Geometry, RelativeSource={RelativeSource FindAncestor, AncestorType=Window}}">
+                <ModelVisual3D.Transform>
+                    <Transform3DGroup>
+                        <TranslateTransform3D
+                                    OffsetX="{Binding Path=State.TrackerPlugin.Content.Position.X}"
+                                    OffsetY="{Binding Path=State.TrackerPlugin.Content.Position.Y}"
+                                    OffsetZ="{Binding Path=State.TrackerPlugin.Content.Position.Z}">
+                        </TranslateTransform3D>
+                        <TranslateTransform3D 
+                                    OffsetX="{Binding Path=State.StabilizerPlugin.Content.Translation.X}"
+                                    OffsetY="{Binding Path=State.StabilizerPlugin.Content.Translation.Y}"
+                                    OffsetZ="{Binding Path=State.StabilizerPlugin.Content.Translation.Z}">
+                        </TranslateTransform3D>
+                    </Transform3DGroup>
+                </ModelVisual3D.Transform>
+            </ModelVisual3D>
+        </Viewport3D>
+    </Border>
+</helpers:FullScreenWindow>

@@ -1,0 +1,17 @@
+<xfi:fileinfo xmlns:xfi="http://ns.adobe.com/xmp/fileinfo/">
+	<xfi:panels>
+		<xfi:panel
+			name = "vrplayer"
+			label = "VR Player"
+			description = "Loads a custom XMP schema from the 'properties.xml' file and creates a VR Player panel out of the properties."  
+			type = "custom"
+			version = "1.0"
+			panelLibrary = "generic"
+			panelClass = "examples.panels.generic.GenericPanel"
+			propertyDescriptionFile = "properties.xml"			
+			localizationFile = "Generic"			
+			modifyDate = "2013-03-13Z"
+			visible="true">
+		</xfi:panel>
+	</xfi:panels>
+</xfi:fileinfo>

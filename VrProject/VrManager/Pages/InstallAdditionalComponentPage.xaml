@@ -1,0 +1,120 @@
+﻿<Page x:Class="VrManager.Pages.InstallAdditionalComponentPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:VrManager.Pages"
+      mc:Ignorable="d" 
+      Background="{DynamicResource ColorBackground}"
+      Name="thisPage"
+      Unloaded="thisPage_Unloaded"
+      Title="Дополнительные компоненты" 
+      
+      >
+
+    <Page.Resources>
+        <Style BasedOn="{StaticResource BtnMetro}"
+               x:Key="InstallButton"
+               TargetType="Button">
+            <Setter Property="Padding" Value="5" />
+            <Setter Property="Margin" Value="10" />
+            <Setter Property="HorizontalAlignment" Value="Left" />
+            
+        </Style>
+    </Page.Resources>
+
+    <Grid Margin="50" Grid.Row="1">
+        <Grid.RowDefinitions>
+            <!--Row 0 -->
+            <RowDefinition Height="1*" />
+            <!--Row 1 -->
+            <RowDefinition Height="auto"  />
+            <!--Row 2 -->
+            <!--Row 3 -->
+            <RowDefinition Height="auto" />
+            <!--Row 4 -->
+            <!--Row 5-->
+            <RowDefinition Height="auto" />
+            <!--Row 6 -->
+            <!--Row 7 -->
+            <RowDefinition Height="auto" />
+            <!--Row 8-->
+            <RowDefinition Height="1*" />
+
+        </Grid.RowDefinitions>
+
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="auto" />
+            <ColumnDefinition Width="auto" />
+            <ColumnDefinition Width="*" />
+        </Grid.ColumnDefinitions>
+
+        <Label HorizontalContentAlignment="Right" 
+               VerticalContentAlignment ="Center"
+               Grid.Column="0"
+               Grid.Row="1" 
+               Margin="5,0,0,0" 
+               Content="Microsoft SQL Server Compact 4.0"/>
+
+        <Label HorizontalContentAlignment="Right" 
+               VerticalContentAlignment ="Center"
+               Grid.Column="0"
+               Grid.Row="2" 
+               Margin="5,0,0,0" 
+               Content="шрифт Segoe MDL2 Assets:"/>
+
+        <Label HorizontalContentAlignment="Right" 
+               VerticalContentAlignment ="Center"
+               Grid.Column="0"
+               Grid.Row="3" 
+               Margin="5,0,0,0" 
+               Content="K-Lite Codec Pack для VrPlayer"/>
+
+        <Label HorizontalContentAlignment="Right" 
+               VerticalContentAlignment ="Center"
+               Grid.Column="0"
+               Grid.Row="4" 
+               Margin="5,0,0,0" 
+               Content="VLC media player для VrPlayer"/>
+
+        <Button Grid.Column="3"
+                    Grid.Row="1"          
+                    Style="{StaticResource InstallButton}"      
+                    x:Name="Btn_InstallSql"
+                    Click="Btn_InstallSql_Click"
+                    >
+            <TextBlock FontSize="18" Text="Установить"/>
+        </Button>
+
+        <Button Grid.Column="3"
+                    Grid.Row="2"          
+                    Style="{StaticResource InstallButton}"                
+                    x:Name="Btn_InstallFont"
+                    Click="Btn_InstallFont_Click"
+                    >
+            <TextBlock FontSize="18" Text="Установить"/>
+        </Button>
+
+        <Button Grid.Column="3"
+                    Grid.Row="3"          
+                    Style="{StaticResource InstallButton}"                
+                    x:Name="Btn_InstallCodec"
+                    Click="Btn_InstallCodec_Click"
+                    >
+            <TextBlock FontSize="18" Text="Установить"/>
+        </Button>
+
+        <Button Grid.Column="3"
+                    Grid.Row="4"          
+                    Style="{StaticResource InstallButton}"                
+                    x:Name="Btn_Vcl"
+                    Click="Btn_Vcl_Click"
+                    >
+            <TextBlock FontSize="18" Text="Установить"/>
+        </Button>
+
+
+
+    </Grid>
+</Page>

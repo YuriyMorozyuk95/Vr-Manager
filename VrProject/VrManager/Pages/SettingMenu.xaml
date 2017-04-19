@@ -1,0 +1,73 @@
+﻿<Page x:Class="VrManager.Pages.SettingMenu"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:VrManager.Pages"
+      xmlns:Controls="clr-namespace:MahApps.Metro.Controls;assembly=MahApps.Metro"
+      mc:Ignorable="d" 
+      Background="{DynamicResource ColorBackground}"
+      Title="Меню настроек"
+      Name="thisPage"
+      Loaded="thisPage_Loaded"
+      Unloaded="thisPage_Unloaded">
+
+    <Page.Resources>
+        <Style TargetType="Controls:Tile">
+            <Setter Property="Foreground" Value="{DynamicResource ColorForeground}" />
+            <Setter Property="Background" Value="Transparent" />
+            <Setter Property="BorderBrush" Value="{DynamicResource AccentColorBrush}"/>
+            <Setter Property="BorderThickness" Value="2" />
+            <Setter Property="Margin" Value="15" />
+            <Setter Property="Height" Value="200" />
+            <Setter Property="Width" Value="200" />
+        </Style>
+    </Page.Resources>
+    <WrapPanel Grid.Row="1" Margin="40" HorizontalAlignment="Center" VerticalAlignment="Center">
+
+        <Controls:Tile x:Name="MainSettingTile"
+                       Title="Основные настройки"  
+                       Margin="15"
+                       Click="MainSettingTile_Click">
+            <TextBlock Style="{StaticResource TileIcon}" 
+                         Text="&#xE15E;" />
+        </Controls:Tile>
+
+        <Controls:Tile x:Name="PersonalizationSettingTile"
+                       Title="Персонализацыя"  
+                       Margin="15"
+                       Click="PersonalizationSettingTile_Click"
+                      >
+            <TextBlock Style="{StaticResource TileIcon}" 
+                         Text="&#xE771;" />
+        </Controls:Tile>
+
+        <Controls:Tile x:Name="ChangePasswordTile"
+                       Title="Изминения пароля администратора"  
+                       Margin="15"
+                       Click="ChangePasswordTile_Click"
+                      >
+            <TextBlock Style="{StaticResource TileIcon}" 
+                         Text="&#xE192;" />
+        </Controls:Tile>
+
+        <Controls:Tile x:Name="ChangeFileLicense"
+                       Title="Изминения файла лицензии"  
+                       Margin="15"
+                       Click="ChangeFileLicense_Click"
+                      >
+            <TextBlock Style="{StaticResource TileIcon}" 
+                         Text="&#xE192;" />
+        </Controls:Tile>
+
+        <Controls:Tile x:Name="OpenSettingPlayer"
+                       Title="Открытие настроек плеэра"  
+                       Margin="15"
+                       Click="OpenSettingPlayer_Click"
+                      >
+            <TextBlock Style="{StaticResource TileIcon}" 
+                         Text="&#xE29B;" />
+        </Controls:Tile>
+
+    </WrapPanel>
+</Page>

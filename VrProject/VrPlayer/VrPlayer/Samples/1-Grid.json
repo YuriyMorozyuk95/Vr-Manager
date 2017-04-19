@@ -1,0 +1,11 @@
+{
+  "Media": {
+    "Projection": {
+      "Type": "VrPlayer.Projections.Plane.PlaneProjection",
+      "Params": {
+        "Ratio": 1.33
+      }
+    },
+    "StereoMode": "Mono"
+  }
+}

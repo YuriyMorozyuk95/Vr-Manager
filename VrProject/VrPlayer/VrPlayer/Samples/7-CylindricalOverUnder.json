@@ -1,0 +1,14 @@
+{
+  "Media": {
+    "Projection": {
+      "Type": "VrPlayer.Projections.Cylinder.CylinderProjection",
+      "Params": {
+        "Scale": 1.03339825434611,
+        "Slices": 29,
+        "Stacks": 34,
+        "Angle": 360.0
+      }
+    },
+    "StereoMode": "OverUnder"
+  }
+}

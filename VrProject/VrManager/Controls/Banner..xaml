@@ -1,0 +1,35 @@
+﻿<UserControl x:Class="VrManager.Controls.Banner"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:VrManager.Controls"
+             xmlns:Controls="clr-namespace:MahApps.Metro.Controls;assembly=MahApps.Metro"
+             mc:Ignorable="d" 
+             x:Name="This"
+             Loaded="This_Loaded"
+             d:DesignHeight="300" 
+             d:DesignWidth="300"
+             
+            >
+    
+    <Controls:Tile Name="TileConteiner" Background="Transparent"
+                   Height="{Binding ElementName=This,Path=Height}"
+                   Width="{Binding ElementName=This,Path=Width}"
+                   Margin="{Binding ElementName=This,Path=Margin}"
+                   MaxHeight="{Binding ElementName=This,Path=MaxHeight}"
+                   MinHeight="{Binding ElementName=This,Path=MinHeight}"
+                   MaxWidth="{Binding ElementName=This,Path=MaxWidth}"
+                   MinWidth="{Binding ElementName=This,Path=MinWidth}"
+                   Click="TileConteiner_Click">
+        
+        <MediaElement Name="Player"
+                      LoadedBehavior="Manual"
+                      Volume="0"
+                      HorizontalAlignment="Stretch"
+                      VerticalAlignment="Stretch"
+                      MediaEnded="MediaElement_MediaEnded">
+            
+        </MediaElement>
+    </Controls:Tile>
+</UserControl>

@@ -1,0 +1,493 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">x86</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{D57FC621-BC2F-48B8-804C-F836C0BD1B3C}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>VrPlayer</RootNamespace>
+    <AssemblyName>VrPlayer</AssemblyName>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <TargetFrameworkProfile>
+    </TargetFrameworkProfile>
+    <FileAlignment>512</FileAlignment>
+    <ProjectTypeGuids>{60dc8134-eba5-43b8-bcc9-bb4bc16c2548};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <WarningLevel>4</WarningLevel>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x86' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x86' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <DebugSymbols>true</DebugSymbols>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>vrplayer.ico</ApplicationIcon>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|AnyCPU'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|AnyCPU'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup />
+  <PropertyGroup>
+    <ApplicationManifest>app.manifest</ApplicationManifest>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="CsXmpToolkit">
+      <HintPath>..\Lib\CsXmpToolkit\CsXmpToolkit.dll</HintPath>
+    </Reference>
+    <Reference Include="log4net, Version=1.2.15.0, Culture=neutral, PublicKeyToken=669e0ddf0bb1aa2a, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\log4net.2.0.5\lib\net45-full\log4net.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=9.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Newtonsoft.Json.9.0.2-beta1\lib\net45\Newtonsoft.Json.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="SharpDX, Version=3.0.2.0, Culture=neutral, PublicKeyToken=b4dcf0f35e5521f1, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\SharpDX.3.0.2\lib\net45\SharpDX.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="SharpDX.XAudio2, Version=3.0.2.0, Culture=neutral, PublicKeyToken=b4dcf0f35e5521f1, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\SharpDX.XAudio2.3.0.2\lib\net45\SharpDX.XAudio2.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.Composition" />
+    <Reference Include="System.configuration" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xaml">
+      <RequiredTargetFramework>4.0</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="WindowsBase" />
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
+    <Reference Include="Xceed.Wpf.AvalonDock, Version=2.9.0.0, Culture=neutral, PublicKeyToken=3e4669d2f30244f4, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Extended.Wpf.Toolkit.2.9\lib\net40\Xceed.Wpf.AvalonDock.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Xceed.Wpf.AvalonDock.Themes.Aero, Version=2.9.0.0, Culture=neutral, PublicKeyToken=3e4669d2f30244f4, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Extended.Wpf.Toolkit.2.9\lib\net40\Xceed.Wpf.AvalonDock.Themes.Aero.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Xceed.Wpf.AvalonDock.Themes.Metro, Version=2.9.0.0, Culture=neutral, PublicKeyToken=3e4669d2f30244f4, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Extended.Wpf.Toolkit.2.9\lib\net40\Xceed.Wpf.AvalonDock.Themes.Metro.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Xceed.Wpf.AvalonDock.Themes.VS2010, Version=2.9.0.0, Culture=neutral, PublicKeyToken=3e4669d2f30244f4, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Extended.Wpf.Toolkit.2.9\lib\net40\Xceed.Wpf.AvalonDock.Themes.VS2010.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Xceed.Wpf.DataGrid, Version=2.9.0.0, Culture=neutral, PublicKeyToken=3e4669d2f30244f4, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Extended.Wpf.Toolkit.2.9\lib\net40\Xceed.Wpf.DataGrid.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Xceed.Wpf.Toolkit, Version=2.9.0.0, Culture=neutral, PublicKeyToken=3e4669d2f30244f4, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Extended.Wpf.Toolkit.2.9\lib\net40\Xceed.Wpf.Toolkit.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <ApplicationDefinition Include="App.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </ApplicationDefinition>
+    <Compile Include="Models\Settings\ISettingsManager.cs" />
+    <Compile Include="Services\IMediaService.cs" />
+    <Compile Include="Services\MediaService.cs" />
+    <Compile Include="Models\Config\ApplicationConfigBase.cs" />
+    <Compile Include="Models\Plugins\DynamicPluginManager.cs" />
+    <Compile Include="Models\Presets\IPresetsManager.cs" />
+    <Compile Include="Models\Presets\PresetManager.cs" />
+    <Compile Include="Models\Settings\ShortcutsManager.cs" />
+    <Compile Include="Models\State\LayoutMode.cs" />
+    <Compile Include="Service\ServerService.cs" />
+    <Compile Include="Service\Service.cs" />
+    <Compile Include="StartUpConfig.cs" />
+    <Compile Include="TaskBarHelper\TaskBarHelper.cs" />
+    <Compile Include="Views\Dialogs\KeyInputDialog.xaml.cs">
+      <DependentUpon>KeyInputDialog.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Dialogs\DiscInputDialog.xaml.cs">
+      <DependentUpon>DiscInputDialog.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Dialogs\ProcessInputDialog.xaml.cs">
+      <DependentUpon>ProcessInputDialog.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Settings\DisplaySettings.xaml.cs">
+      <DependentUpon>DisplaySettings.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Settings\ShortcutsSettings.xaml.cs">
+      <DependentUpon>ShortcutsSettings.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Settings\MediaSettings.xaml.cs">
+      <DependentUpon>MediaSettings.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Settings\SettingsWindow.xaml.cs">
+      <DependentUpon>SettingsWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Settings\SettingsManager.cs" />
+    <Compile Include="Views\Dialogs\StreamInputDialog.xaml.cs">
+      <DependentUpon>StreamInputDialog.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Config\AppSettingsApplicationConfig.cs" />
+    <Compile Include="Models\Plugins\IPluginManager.cs" />
+    <Compile Include="Models\State\DefaultApplicationState.cs" />
+    <Compile Include="Models\State\IApplicationState.cs" />
+    <Compile Include="Models\Config\IApplicationConfig.cs" />
+    <Compile Include="ViewModels\SettingsWindowViewModel.cs" />
+    <Compile Include="ViewModels\ViewPortViewModel.cs" />
+    <Compile Include="ViewModels\MenuViewModel.cs" />
+    <Compile Include="ViewModels\MediaViewModel.cs" />
+    <Compile Include="ViewModels\ViewModelFactory.cs" />
+    <Compile Include="Views\ControlPanel.xaml.cs">
+      <DependentUpon>ControlPanel.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Settings\DistortionsSettings.xaml.cs">
+      <DependentUpon>DistortionsSettings.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Settings\EffectsSettings.xaml.cs">
+      <DependentUpon>EffectsSettings.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Settings\GeneralSettings.xaml.cs">
+      <DependentUpon>GeneralSettings.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Menu.xaml.cs">
+      <DependentUpon>Menu.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Settings\ProjectionsSettings.xaml.cs">
+      <DependentUpon>ProjectionsSettings.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Settings\StabilizersSettings.xaml.cs">
+      <DependentUpon>StabilizersSettings.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Settings\TrackersSettings.xaml.cs">
+      <DependentUpon>TrackersSettings.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\ViewPorts\ExternalViewPort.xaml.cs">
+      <DependentUpon>ExternalViewPort.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\ViewPorts\MainViewPort.xaml.cs">
+      <DependentUpon>MainViewPort.xaml</DependentUpon>
+    </Compile>
+    <Page Include="Views\Dialogs\KeyInputDialog.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\Dialogs\DiscInputDialog.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\Dialogs\ProcessInputDialog.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\Settings\DisplaySettings.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\Settings\ShortcutsSettings.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\Settings\MediaSettings.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\Settings\SettingsWindow.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\Dialogs\StreamInputDialog.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\ControlPanel.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\MainWindow.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Compile Include="App.xaml.cs">
+      <DependentUpon>App.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="ViewModels\MainWindowViewModel.cs" />
+    <Compile Include="Views\MainWindow.xaml.cs">
+      <DependentUpon>MainWindow.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Page Include="Views\Settings\DistortionsSettings.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\Settings\EffectsSettings.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\Settings\GeneralSettings.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\Menu.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\Settings\ProjectionsSettings.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\Settings\StabilizersSettings.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\Settings\TrackersSettings.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\ViewPorts\ExternalViewPort.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\ViewPorts\MainViewPort.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Properties\AssemblyInfo.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <Content Include="Samples\1-Grid.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Samples\2-CubeMono.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Samples\3-CubeOverUnder.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Samples\4-CubeSideBySide.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Samples\5-DepthMapEffect.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Samples\6-SphericalOverUnder.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Samples\7-CylindricalOverUnder.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Resource Include="vrplayer.ico" />
+    <None Include="App.config">
+      <SubType>Designer</SubType>
+    </None>
+    <Resource Include="Medias\icon48.png" />
+    <Resource Include="Medias\Nuvola\16x16\browser.png" />
+    <Resource Include="Medias\Nuvola\16x16\edit.png" />
+    <Resource Include="Medias\Nuvola\16x16\edu_science.png" />
+    <Resource Include="Medias\Nuvola\16x16\exit.png" />
+    <Resource Include="Medias\Nuvola\16x16\fileopen.png" />
+    <Resource Include="Medias\Nuvola\16x16\folder_open.png" />
+    <Resource Include="Medias\Nuvola\16x16\help.png" />
+    <Resource Include="Medias\Nuvola\16x16\krec.png" />
+    <Resource Include="Medias\Nuvola\16x16\kservices.png" />
+    <Resource Include="Medias\Nuvola\16x16\package_games_arcade.png" />
+    <Resource Include="Medias\Nuvola\16x16\package_graphics.png" />
+    <Resource Include="Medias\Nuvola\16x16\view_left_right.png" />
+    <Resource Include="Medias\Nuvola\16x16\xmag.png" />
+    <Resource Include="Medias\Nuvola\48x48\kcoloredit.png" />
+    <Resource Include="Medias\Nuvola\48x48\kpovmodeler.png" />
+    <Resource Include="Medias\Nuvola\48x48\noatunloopsong.png" />
+    <Resource Include="Medias\Nuvola\48x48\package_games_arcade.png" />
+    <Resource Include="Medias\Nuvola\48x48\player_pause.png" />
+    <Resource Include="Medias\Nuvola\48x48\player_play.png" />
+    <Resource Include="Medias\Nuvola\48x48\player_stop.png" />
+    <Resource Include="Medias\Nuvola\48x48\xmag.png" />
+    <Resource Include="Medias\Nuvola\16x16\kpovmodeler.png" />
+    <Resource Include="Medias\Nuvola\48x48\kservices.png" />
+    <Resource Include="Medias\banner.jpg" />
+    <Resource Include="Medias\Nuvola\16x16\wizard.png" />
+    <Resource Include="Medias\Nuvola\48x48\wizard.png" />
+    <Resource Include="Medias\Nuvola\16x16\cd.png" />
+    <Resource Include="Medias\Nuvola\16x16\kcmpci.png" />
+    <Resource Include="Medias\Nuvola\48x48\multimedia.png" />
+    <Resource Include="Medias\Nuvola\16x16\window_list.png" />
+    <Resource Include="Medias\Nuvola\16x16\connect_creating.png" />
+    <Resource Include="Medias\Nuvola\48x48\finish.png" />
+    <Resource Include="Medias\Nuvola\48x48\start.png" />
+    <Resource Include="Medias\Nuvola\48x48\input_devices_settings.png" />
+    <Resource Include="Medias\Nuvola\16x16\keyboard.png" />
+    <Resource Include="Medias\Nuvola\48x48\display.png" />
+    <Resource Include="Medias\Nuvola\16x16\cache.png" />
+    <Resource Include="Medias\Nuvola\16x16\kdisknav.png" />
+    <Content Include="Samples\1-Grid.jpg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Samples\2-CubeMono.jpg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Samples\3-CubeOverUnder.jpg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Samples\4-CubeSideBySide.jpg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Samples\5-DepthMapEffect.jpg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Samples\6-SphericalOverUnder.jpg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Samples\7-CylindricalOverUnder.jpg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Samples\Samples-copyright.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="DefaultPreset.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <None Include="app.manifest" />
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <AppDesigner Include="Properties\" />
+    <Resource Include="Medias\Nuvola\Nuvola-copyright.txt" />
+    <Resource Include="Medias\Nuvola\Nuvola-license.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.0">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4 %28x86 and x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1 Client Profile</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Windows.Installer.3.1">
+      <Visible>False</Visible>
+      <ProductName>Windows Installer 3.1</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\VrManager.Data\VrManager.Data.csproj">
+      <Project>{2df2244a-3ac8-4bd6-8851-c2f34bd7a3d4}</Project>
+      <Name>VrManager.Data</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\VrManager\VrManager.csproj">
+      <Project>{7ac7e0e4-dc68-49a6-89cc-9705aa3dec0f}</Project>
+      <Name>VrManager</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Vr.License\Vr.License.csproj">
+      <Project>{5E54B9F1-7681-4F4E-AA81-FEBC39CA0476}</Project>
+      <Name>Vr.License</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\VrPlayer.Contracts\VrPlayer.Contracts.csproj">
+      <Project>{463D0CFD-915F-41ED-9807-D509EBE1124C}</Project>
+      <Name>VrPlayer.Contracts</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\VrPlayer.Helpers\VrPlayer.Helpers.csproj">
+      <Project>{D4A54A70-3BB5-4BE5-BEDB-3A41B6C43033}</Project>
+      <Name>VrPlayer.Helpers</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <PropertyGroup>
+    <PostBuildEvent>xcopy "$(SolutionDir)VrPlayerLib\CsXmpToolkit\*.dll" "$(TargetDir)" /y
+xcopy "$(SolutionDir)VrPlayer\Lib\WPFMediaKit\EVRPresenter32.dll" "$(TargetDir)" /y</PostBuildEvent>
+  </PropertyGroup>
+  <PropertyGroup>
+    <PreBuildEvent>
+    </PreBuildEvent>
+  </PropertyGroup>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

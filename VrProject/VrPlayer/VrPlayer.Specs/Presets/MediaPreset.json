@@ -1,0 +1,15 @@
+﻿{
+  "Media": {
+    "Projection": {
+      "Type": "VrPlayer.Projections.Sphere.SphereProjection",
+      "Params": {
+        "Slices": 32,
+        "Stacks": 32,
+        "Width": 1.0,
+        "Height": 1.0,
+        "Depth": 1.0
+      }
+    },
+    "StereoMode": "SideBySide"
+  }
+}

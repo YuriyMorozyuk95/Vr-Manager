@@ -1,0 +1,167 @@
+﻿<UserControl x:Class="VrPlayer.Views.ViewPorts.MainViewPort"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:converters="clr-namespace:VrPlayer.Helpers.Converters;assembly=VrPlayer.Helpers"
+             mc:Ignorable="d">
+    <UserControl.Resources>
+        <converters:ThicknessMultiConverter x:Key="ThicknessMulti" />
+        <VisualBrush x:Key="Media"
+                     RenderOptions.CachingHint="Cache"
+                     RenderOptions.CacheInvalidationThresholdMaximum="2.0"
+                     RenderOptions.CacheInvalidationThresholdMinimum="0.5">
+            <VisualBrush.Visual>
+                <ContentControl Effect="{Binding Path=State.EffectPlugin.Content}" Content="{Binding Path=State.MediaPlugin.Content.Media}" IsHitTestVisible="False" />
+            </VisualBrush.Visual>
+        </VisualBrush>
+        <GeometryModel3D x:Key="Geometry" Geometry="{Binding Path=State.ProjectionPlugin.Content.Geometry}">
+            <GeometryModel3D.BackMaterial>
+                <DiffuseMaterial Brush="{DynamicResource Media}"></DiffuseMaterial>
+            </GeometryModel3D.BackMaterial>
+        </GeometryModel3D>
+
+        <Viewport3D x:Key="view1" IsHitTestVisible="False" RenderOptions.EdgeMode="Aliased" ClipToBounds="False">
+            <Viewport3D.Margin>
+                <MultiBinding Converter="{StaticResource ThicknessMulti}" ConverterParameter="1">
+                    <Binding Path="Config.ViewportsHorizontalOffset" />
+                    <Binding Path="Config.ViewportsVerticalOffset" />
+                </MultiBinding>
+            </Viewport3D.Margin>
+            <Viewport3D.Camera>
+                <PerspectiveCamera UpDirection="0,1,0" LookDirection="0,0,1" Position="{Binding Path=State.ProjectionPlugin.Content.CameraLeftPosition}" FieldOfView="{Binding Path=Config.CameraFieldOfView}" >
+                    <PerspectiveCamera.Transform>
+                        <Transform3DGroup>
+                            <TranslateTransform3D OffsetY="{Binding Path=Config.NeckHeight}"></TranslateTransform3D>
+                            <RotateTransform3D>
+                                <RotateTransform3D.Rotation>
+                                    <QuaternionRotation3D Quaternion="{Binding Path=State.TrackerPlugin.Content.Rotation}"/>
+                                </RotateTransform3D.Rotation>
+                            </RotateTransform3D>
+                            <RotateTransform3D>
+                                <RotateTransform3D.Rotation>
+                                    <QuaternionRotation3D Quaternion="{Binding Path=State.StabilizerPlugin.Content.Rotation}"/>
+                                </RotateTransform3D.Rotation>
+                            </RotateTransform3D>
+                            <TranslateTransform3D OffsetX="{Binding Path=State.ProjectionPlugin.Content.CameraLeftPosition.X}"
+                                                  OffsetY="{Binding Path=State.ProjectionPlugin.Content.CameraLeftPosition.Y}"
+                                                  OffsetZ="{Binding Path=State.ProjectionPlugin.Content.CameraLeftPosition.Z}">
+                            </TranslateTransform3D>
+                        </Transform3DGroup>
+                    </PerspectiveCamera.Transform>
+                </PerspectiveCamera>
+            </Viewport3D.Camera>
+            <ModelVisual3D>
+                <ModelVisual3D.Content>
+                    <AmbientLight Color="White"></AmbientLight >
+                </ModelVisual3D.Content>
+            </ModelVisual3D>
+            <ModelVisual3D Content="{DynamicResource Geometry}">
+                <ModelVisual3D.Transform>
+                    <Transform3DGroup>
+                        <TranslateTransform3D
+                                    OffsetX="{Binding Path=State.TrackerPlugin.Content.Position.X}"
+                                    OffsetY="{Binding Path=State.TrackerPlugin.Content.Position.Y}"
+                                    OffsetZ="{Binding Path=State.TrackerPlugin.Content.Position.Z}">
+                        </TranslateTransform3D>
+                        <TranslateTransform3D
+                                    OffsetX="{Binding Path=State.StabilizerPlugin.Content.Translation.X}"
+                                    OffsetY="{Binding Path=State.StabilizerPlugin.Content.Translation.Y}"
+                                    OffsetZ="{Binding Path=State.StabilizerPlugin.Content.Translation.Z}">
+                        </TranslateTransform3D>
+                    </Transform3DGroup>
+                </ModelVisual3D.Transform>
+            </ModelVisual3D>
+        </Viewport3D>
+
+        <Viewport3D x:Key="view2" IsHitTestVisible="False" RenderOptions.EdgeMode="Aliased" ClipToBounds="False">
+            <Viewport3D.Margin>
+                <MultiBinding Converter="{StaticResource ThicknessMulti}" ConverterParameter="-1">
+                    <Binding Path="Config.ViewportsHorizontalOffset" />
+                    <Binding Path="Config.ViewportsVerticalOffset" />
+                </MultiBinding>
+            </Viewport3D.Margin>
+            <Viewport3D.Camera>
+                <PerspectiveCamera UpDirection="0,1,0" LookDirection="0,0,1" Position="{Binding Path=State.ProjectionPlugin.Projection.CameraRightPosition}" FieldOfView="{Binding Path=Config.CameraFieldOfView}">
+                    <PerspectiveCamera.Transform>
+                        <Transform3DGroup>
+                            <TranslateTransform3D OffsetY="{Binding Path=Config.NeckHeight}"></TranslateTransform3D>
+                            <RotateTransform3D>
+                                <RotateTransform3D.Rotation>
+                                    <QuaternionRotation3D Quaternion="{Binding Path=State.TrackerPlugin.Content.Rotation}"/>
+                                </RotateTransform3D.Rotation>
+                            </RotateTransform3D>
+                            <RotateTransform3D>
+                                <RotateTransform3D.Rotation>
+                                    <QuaternionRotation3D Quaternion="{Binding Path=State.StabilizerPlugin.Content.Rotation}"/>
+                                </RotateTransform3D.Rotation>
+                            </RotateTransform3D>
+                            <TranslateTransform3D OffsetX="{Binding Path=State.ProjectionPlugin.Content.CameraRightPosition.X}"
+                                                  OffsetY="{Binding Path=State.ProjectionPlugin.Content.CameraRightPosition.Y}"
+                                                  OffsetZ="{Binding Path=State.ProjectionPlugin.Content.CameraRightPosition.Z}">
+                            </TranslateTransform3D>
+                        </Transform3DGroup>
+                    </PerspectiveCamera.Transform>
+                </PerspectiveCamera>
+            </Viewport3D.Camera>
+            <ModelVisual3D>
+                <ModelVisual3D.Content>
+                    <AmbientLight Color="White"></AmbientLight >
+                </ModelVisual3D.Content>
+            </ModelVisual3D>
+            <ModelVisual3D Content="{DynamicResource Geometry}">
+                <ModelVisual3D.Transform>
+                    <Transform3DGroup>
+                        <TranslateTransform3D
+                                    OffsetX="{Binding Path=State.TrackerPlugin.Content.Position.X}"
+                                    OffsetY="{Binding Path=State.TrackerPlugin.Content.Position.Y}"
+                                    OffsetZ="{Binding Path=State.TrackerPlugin.Content.Position.Z}">
+                        </TranslateTransform3D>
+                        <TranslateTransform3D
+                                    OffsetX="{Binding Path=State.StabilizerPlugin.Content.Translation.X}"
+                                    OffsetY="{Binding Path=State.StabilizerPlugin.Content.Translation.Y}"
+                                    OffsetZ="{Binding Path=State.StabilizerPlugin.Content.Translation.Z}">
+                        </TranslateTransform3D>
+                    </Transform3DGroup>
+                </ModelVisual3D.Transform>
+            </ModelVisual3D>
+        </Viewport3D>
+    
+    </UserControl.Resources>
+    <Border Background="Transparent" MouseLeftButtonDown="OnMouseLeftButtonDown" MouseWheel="OnMouseWheel" >
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*" />
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*" />
+                <RowDefinition Height="*" />
+            </Grid.RowDefinitions>
+
+            <!--ViewPort Left-->
+            <Grid Background="Black" ClipToBounds="True" x:Name="ViewPortLeft"
+                  Grid.Column="{Binding Path=Viewport1Col}" 
+                  Grid.ColumnSpan="{Binding Path=Viewport1ColSpan}"  
+                  Grid.Row="{Binding Path=Viewport1Row}" 
+                  Grid.RowSpan="{Binding Path=Viewport1RowSpan}"
+                  Effect="{Binding Path=State.DistortionPlugin.Content}">
+                <Border Background="Black" ClipToBounds="True">
+                    <ContentControl Content="{StaticResource view1}" />
+                </Border>
+                
+            </Grid>
+            <!--ViewPort Right-->
+            <Grid Background="Black" ClipToBounds="True" x:Name="ViewPortRight"
+                  Grid.Column="{Binding Path=Viewport2Col}" 
+                  Grid.ColumnSpan="{Binding Path=Viewport2ColSpan}" 
+                  Grid.Row="{Binding Path=Viewport2Row}" 
+                  Grid.RowSpan="{Binding Path=Viewport2RowSpan}"
+                  Effect="{Binding Path=State.DistortionPlugin.Content}">
+                <Border Background="Black" ClipToBounds="True">
+                    <ContentControl Content="{StaticResource view2}" />
+                </Border>
+            </Grid>
+        </Grid>
+    </Border>
+</UserControl>

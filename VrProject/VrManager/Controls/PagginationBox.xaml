@@ -1,0 +1,21 @@
+﻿<UserControl x:Class="VrManager.Controls.PagginationBox"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:VrManager.Controls"
+              xmlns:control="clr-namespace:VrManager.Controls"
+                >
+    <UserControl.Resources>
+        <!--<Style BasedOn="{StaticResource }">
+            
+        </Style>-->
+    </UserControl.Resources>
+    <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+        <control:AppBarButton Icon="&#xE112;" Size="125" x:Name="Back" Click="Back_Click" Margin="0,0,110,0"/>
+        <StackPanel Name="ContainerButtons" Orientation="Horizontal">
+            <control:AppBarButton Icon="" Size="125" FontIcon="Segoe UI Symbol" x:Name="CurrentNumber" Selected="True" />
+        </StackPanel>
+        <control:AppBarButton Icon="&#xE111;" Size="125" x:Name="Next" Click="Next_Click" Margin="110,0,0,0"/>
+    </StackPanel>
+</UserControl>

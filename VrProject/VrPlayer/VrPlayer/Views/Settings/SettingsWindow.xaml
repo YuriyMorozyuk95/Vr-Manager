@@ -1,0 +1,94 @@
+﻿<Window x:Class="VrPlayer.Views.Settings.SettingsWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:settings="clr-namespace:VrPlayer.Views.Settings"
+        xmlns:converters="clr-namespace:VrPlayer.Helpers.Converters;assembly=VrPlayer.Helpers"
+        Icon="/Medias/Nuvola/16x16/kservices.png"
+        Title="Settings" Height="450" Width="550" WindowStyle="ToolWindow" Margin="0" Padding="0" Closed="SettingsWindow_OnClosed">
+    <Window.Resources>
+        <converters:InvertBooleanToVisibilityConverter x:Key="InvertBooleanToVisibility"/>
+    </Window.Resources>
+    <TabControl x:Name="Tabs" TabStripPlacement="Left" Margin="-4">
+        <TabItem UseLayoutRounding="False">
+            <TabItem.Header>
+                <StackPanel Orientation="Vertical" Width="64">
+                    <Image Height="32" Width="32" Source="/Medias/Nuvola/48x48/kservices.png" />
+                    <TextBlock Text="General" HorizontalAlignment="Center" />
+                </StackPanel>
+            </TabItem.Header>
+            <settings:GeneralSettings />
+        </TabItem>
+        <TabItem UseLayoutRounding="False">
+            <TabItem.Header>
+                <StackPanel Orientation="Vertical" Width="64">
+                    <Image Height="32" Width="32" Source="/Medias/Nuvola/48x48/display.png" />
+                    <TextBlock Text="Display" HorizontalAlignment="Center" />
+                </StackPanel>
+            </TabItem.Header>
+            <settings:DisplaySettings />
+        </TabItem>
+        <TabItem UseLayoutRounding="False">
+            <TabItem.Header>
+                <StackPanel Orientation="Vertical" Width="64">
+                    <Image Height="32" Width="32" Source="/Medias/Nuvola/48x48/multimedia.png" />
+                    <TextBlock Text="Media" HorizontalAlignment="Center" />
+                </StackPanel>
+            </TabItem.Header>
+            <settings:MediaSettings />
+        </TabItem>
+        <TabItem>
+            <TabItem.Header>
+                <StackPanel Orientation="Vertical" Width="64">
+                    <Image Height="32" Width="32" Source="/Medias/Nuvola/48x48/kpovmodeler.png" />
+                    <TextBlock Text="Projections" HorizontalAlignment="Center" />
+                </StackPanel>
+            </TabItem.Header>
+            <settings:ProjectionsSettings />
+        </TabItem>
+        <TabItem>
+            <TabItem.Header>
+                <StackPanel Orientation="Vertical" Width="64">
+                    <Image Height="32" Width="32" Source="/Medias/Nuvola/48x48/kcoloredit.png" />
+                    <TextBlock Text="Effects" HorizontalAlignment="Center" />
+                </StackPanel>
+            </TabItem.Header>
+            <settings:EffectsSettings />
+        </TabItem>
+        <TabItem>
+            <TabItem.Header>
+                <StackPanel Orientation="Vertical" Width="64">
+                    <Image Height="32" Width="32" Source="/Medias/Nuvola/48x48/xmag.png" />
+                    <TextBlock Text="Distortions" HorizontalAlignment="Center" />
+                </StackPanel>
+            </TabItem.Header>
+            <settings:DistortionsSettings />
+        </TabItem>
+        <TabItem>
+            <TabItem.Header>
+                <StackPanel Orientation="Vertical" Width="64">
+                    <Image Height="32" Width="32" Source="/Medias/Nuvola/48x48/package_games_arcade.png" />
+                    <TextBlock Text="Trackers" HorizontalAlignment="Center" />
+                </StackPanel>
+            </TabItem.Header>
+            <settings:TrackersSettings />
+        </TabItem>
+        <TabItem Visibility="{Binding Path=HideStabilizers, Converter={StaticResource InvertBooleanToVisibility}}">
+            <TabItem.Header>
+                <StackPanel Orientation="Vertical" Width="64">
+                    <Image Height="32" Width="32" Source="/Medias/Nuvola/48x48/wizard.png" />
+                    <TextBlock Text="Stabilizers" HorizontalAlignment="Center" />
+                </StackPanel>
+            </TabItem.Header>
+            <settings:StabilizersSettings />
+        </TabItem>
+        <TabItem UseLayoutRounding="False">
+            <TabItem.Header>
+                <StackPanel Orientation="Vertical" Width="64">
+                    <Image Height="32" Width="32" Source="/Medias/Nuvola/48x48/input_devices_settings.png" />
+                    <TextBlock Text="Shortcuts" HorizontalAlignment="Center" />
+                </StackPanel>
+            </TabItem.Header>
+            <settings:ShortcutsSettings />
+        </TabItem>
+    </TabControl>
+</Window>

@@ -1,0 +1,80 @@
+﻿<Page x:Class="VrManager.Pages.StatisticPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:VrManager.Pages"
+      xmlns:p="clr-namespace:VrManager.Properties"
+      mc:Ignorable="d" 
+      d:DesignHeight="720" d:DesignWidth="1024"
+      Title="Статистика пользователя"
+      Loaded="Page_Loaded">
+    <Page.Resources>
+        <Style x:Key="HeaderButton" BasedOn="{StaticResource BtnMetro}" TargetType="Button">
+            <Setter Property="HorizontalAlignment" Value="Center"/>
+            <Setter Property="VerticalAlignment" Value="Center" />
+            <Setter Property="Padding" Value="10" />
+            <Setter Property="FontSize" Value="18" />
+        </Style>
+    
+    </Page.Resources>
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="1*" />
+            <RowDefinition Height="4*" />
+        </Grid.RowDefinitions>
+        <Grid Grid.Row="0">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="auto" />
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="auto" />
+                <ColumnDefinition Width="*" />
+            </Grid.ColumnDefinitions>
+
+            <Button Name="SaveBtn" 
+                    Grid.Column="1" 
+                    Click="SaveBtn_Click"
+                    Style="{DynamicResource HeaderButton}" 
+                    Content="Сохранить на ПК" 
+                    />
+            <StackPanel Grid.Column="3" 
+                        Margin="20">
+                <StackPanel Orientation="Horizontal">
+                    <TextBlock Text="Введите емейл :" Margin="5" FontSize="18" VerticalAlignment="Center"/>
+                    <TextBox Width="300" Name="TB_Email" />
+
+
+                </StackPanel>
+               
+                <Button Name="SendBtn" 
+                        Margin="20"
+                        Grid.Column="1" 
+                        Style="{DynamicResource HeaderButton}" 
+                   Click="SendBtn_Click"
+                    Content="Отправить по емейлу" 
+                   />
+            </StackPanel>
+        </Grid>
+        <DataGrid Grid.Row="1" 
+                  Name="TableStatistic" 
+                  AutoGenerateColumns="False" 
+                  IsReadOnly="True" 
+                  ScrollViewer.HorizontalScrollBarVisibility="Visible">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="Номер воизпризвидения" Binding="{Binding Path=ObserveId}"/>
+                <DataGridTextColumn Header="Найменование" Binding="{Binding Path=Name}"/>
+                <DataGridTextColumn Header="Тип елемента" Binding="{Binding Path=TypeItem}"/>
+                <DataGridTextColumn Header="Время воизпрезведения" Binding="{Binding Path=Duration,StringFormat=\{0:mm:ss\}}"/>
+                <DataGridTextColumn Header="ПК" Binding="{Binding Path=PC}"/>
+                <DataGridTextColumn Header="Время запуска" Binding="{Binding Path=TimeStart,StringFormat=\{0:dd.MM.yyyy hh:mm:ss\}}"/>
+                <DataGridTextColumn Header="Время остоновки" Binding="{Binding Path=TimeStop,StringFormat=\{0:mm:ss\}}"/>
+                <DataGridTextColumn Header="Время нажатия паузы" Binding="{Binding Path=TimePause,StringFormat=\{0:mm:ss\}}"/>
+                <DataGridTextColumn Header="Количество нажатий старт" Binding="{Binding Path=PressStartCouner}"/>
+                <DataGridTextColumn Header="Количество нажатий паузы" Binding="{Binding Path=PressPauseCouner}"/>
+                <DataGridTextColumn Header="Остоновка в ручную или по истичению времени" Binding="{Binding Path=Halted}"/>
+
+            </DataGrid.Columns>
+        </DataGrid>
+    </Grid>
+</Page>

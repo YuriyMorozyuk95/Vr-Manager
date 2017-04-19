@@ -1,0 +1,253 @@
+﻿<Window x:Class="VrManager.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:VrManager"
+         xmlns:myControl="clr-namespace:VrManager.Controls"
+        mc:Ignorable="d"
+        Title="VrManager"
+        xmlns:Controls="clr-namespace:MahApps.Metro.Controls;assembly=MahApps.Metro"
+        WindowStyle="None"
+        ResizeMode="NoResize"
+        Loaded="Window_Loaded"
+        MouseDown="Grid_MouseDown"
+        Background="{DynamicResource ColorBackground}"
+        WindowStartupLocation="CenterScreen"
+      
+        SizeChanged="Window_SizeChanged"
+        Topmost="False"
+        LocationChanged="Window_LocationChanged"
+        MouseLeftButtonDown="MouseObserverEvent"
+        MouseRightButtonDown="MouseObserverEvent">
+  <!--WindowState="Maximized"-->
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <Grid Grid.Row="0" Background="{DynamicResource ColorRegular}">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="auto" />
+                <ColumnDefinition Width="auto" />
+                <ColumnDefinition Width="auto" />
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="auto" />
+                <ColumnDefinition Width="auto" />
+            </Grid.ColumnDefinitions>
+            
+            <Button Grid.Column="0"
+                        Name="HomeButton"                       
+                        Click="HomeButton_Click"
+                       >
+                <Button.Template>
+                    <ControlTemplate>
+                        <TextBlock Name="thisButton"
+                            Height="50"
+                            Width="50"
+                            FontFamily="Segoe MDL2 Assets"
+                            FontSize="30"
+                            Foreground="{DynamicResource ColorForeground}"
+                            Padding="10"       
+                            Text="&#xE10F;"                                  
+                            />
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsMouseOver" Value="True">
+
+                                <Setter TargetName="thisButton"
+                                        Property="Background" 
+                                        Value="{DynamicResource ColorHover}"/>
+                            </Trigger>
+
+                            <Trigger Property="Button.IsPressed" Value="True">
+
+                                <Setter TargetName="thisButton"
+                                        Property="Background" 
+                                        Value="{DynamicResource ColorPressed}"/>
+                            </Trigger>
+                            <Trigger Property="IsEnabled" Value="False">
+
+                                <Setter TargetName="thisButton"
+                                        Property="Background" 
+                                        Value="{DynamicResource ColorBackgroundDisable}"/>
+                                <Setter TargetName="thisButton"
+                                        Property="Foreground" 
+                                        Value="{DynamicResource ColorForegroundDisable}"/>
+                            </Trigger>
+                            <Trigger Property="IsEnabled" Value="False">
+
+                                <Setter TargetName="thisButton"
+                                        Property="Background" 
+                                        Value="{DynamicResource ColorBackgroundDisable}"/>
+                                <Setter TargetName="thisButton"
+                                        Property="Foreground" 
+                                        Value="{DynamicResource ColorForegroundDisable}"/>
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Button.Template>
+            </Button>
+
+            <Button Grid.Column="1"
+                        Name="BackButton"                       
+                        Click="BackButton_Click"
+                   
+                        IsEnabled="{Binding ElementName=MainFrame,Path=CanGoBack}"
+                        >
+                <Button.Template>
+                    <ControlTemplate>
+                        <TextBlock Name="thisButton"
+                            Height="50"
+                            Width="50"
+                            
+                            FontSize="30"
+                            Foreground="{DynamicResource ColorForeground}"
+                            Padding="10"
+                                   FontFamily="Segoe MDL2 Assets"
+                            Text="&#xE0A6;"           
+                            />
+
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsMouseOver" Value="True">
+                                <!--<Setter TargetName="thisButton"
+                                        Property="Opacity" 
+                                        Value="0.8"/>-->
+                                <Setter TargetName="thisButton"
+                                        Property="Background" 
+                                        Value="{DynamicResource ColorHover}"/>
+                            </Trigger>
+
+                            <Trigger Property="Button.IsPressed" Value="True">
+                                <!--<Setter TargetName="thisButton"
+                                        Property="Opacity" 
+                                        Value="0.4"/>-->
+                                <Setter TargetName="thisButton"
+                                        Property="Background" 
+                                        Value="{DynamicResource ColorPressed}"/>
+
+                            </Trigger>
+                            <Trigger Property="IsEnabled" Value="False">
+
+
+                                <Setter TargetName="thisButton"
+                                        Property="Foreground" 
+                                        Value="{DynamicResource ColorBackgroundDisable}"/>
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Button.Template>
+            </Button>
+
+            <Button Grid.Column="2"
+                        Name="NextButton"                        
+                        Click="NextButton_Click"
+                        IsEnabled="{Binding ElementName=MainFrame,Path=CanGoForward}">
+                <Button.Template>
+                    <ControlTemplate>
+                        <TextBlock Name="thisButton"
+                            Height="50"
+                            Width="50"
+                            FontFamily="Segoe MDL2 Assets"
+                            FontSize="30"
+                            Foreground="{DynamicResource ColorForeground}" 
+                            Padding="10"
+                            Text="&#xE111;"/>
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsMouseOver" Value="True">
+
+                                <Setter TargetName="thisButton"
+                                        Property="Background" 
+                                        Value="{DynamicResource ColorHover}"/>
+                            </Trigger>
+
+                            <Trigger Property="Button.IsPressed" Value="True">
+                                <Setter TargetName="thisButton"
+                                        Property="Background" 
+                                        Value="{DynamicResource ColorPressed}"/>
+                            </Trigger>
+                            <Trigger Property="IsEnabled" Value="False">
+
+
+                                <Setter TargetName="thisButton"
+                                        Property="Foreground" 
+                                        Value="{DynamicResource ColorBackgroundDisable}"/>
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Button.Template>
+            </Button>
+
+
+            <Label  Grid.Column="3"
+                    Name="TitleContent" 
+                    Content="Vr Manager"
+                    FontSize="30"    
+                    HorizontalAlignment="Left"
+                    Foreground="{DynamicResource ColorForeground}"
+                    VerticalAlignment="Center"/>
+            
+            <Label  Grid.Column="4"
+                    Name="NameProgram" 
+                    Content="Vr Manager"
+                    FontSize="30"    
+                    HorizontalAlignment="Right"
+                    Foreground="{DynamicResource ColorForeground}"
+                    VerticalAlignment="Center"/>
+
+            <Button Grid.Column="8"
+                        Name="ExitButton"                    
+                        Click="ExitButton_Click"
+                        Height="50"
+                        Width="50">
+                <Button.Template>
+                    <ControlTemplate>
+                        <TextBlock Name="thisButton"                           
+                            FontFamily="Segoe MDL2 Assets"
+                            FontSize="30"
+                            Foreground="{DynamicResource ColorForeground}"
+                            Padding="0,10,10,10"
+                            Text=" &#xE711;"/>
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsMouseOver" Value="True">
+                                <Setter TargetName="thisButton"
+                                        Property="Opacity" 
+                                        Value="0.8"/>
+                                <Setter TargetName="thisButton"
+                                        Property="Background" 
+                                        Value="#e81123"/>
+                            </Trigger>
+
+                            <Trigger Property="Button.IsPressed" Value="True">
+                                <Setter TargetName="thisButton"
+                                        Property="Opacity" 
+                                        Value="0.4"/>
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Button.Template>
+
+            </Button>
+
+        </Grid>
+
+        <Frame Name="MainFrame" Grid.Row="1" NavigationUIVisibility="Hidden" Navigating="MainFrame_Navigating" >
+            
+        </Frame>
+
+        <Grid Grid.Row="0" Grid.RowSpan="2" x:Name="AdvertisingScreen" Visibility="Collapsed" Background="Black">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="5*" />
+                <RowDefinition Height="1*" />
+            </Grid.RowDefinitions>
+            <myControl:Banner x:Name="AdvertisingBanner" Grid.RowSpan="2"  />
+            <TextBlock Foreground="White" 
+                       Grid.Row="2" 
+                       Text="Пожалуста нажмите любую клавишу на клавиатуре" 
+                       HorizontalAlignment="Center"
+                       FontSize="28"/>
+        </Grid>
+        
+
+    </Grid>
+</Window>

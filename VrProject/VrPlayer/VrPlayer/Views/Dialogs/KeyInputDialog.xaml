@@ -1,0 +1,9 @@
+﻿<Window x:Class="VrPlayer.Views.Dialogs.KeyInputDialog"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Shortcut" Icon="/Medias/Nuvola/16x16/keyboard.png" ResizeMode="NoResize" ShowInTaskbar="False" SizeToContent="WidthAndHeight" Topmost="True" WindowStartupLocation="CenterScreen" KeyDown="KeyInputDialog_OnKeyDown">
+    <StackPanel Margin="10" HorizontalAlignment="Center">
+            <Label Content="Please press a key..." />
+    </StackPanel>
+    
+</Window>

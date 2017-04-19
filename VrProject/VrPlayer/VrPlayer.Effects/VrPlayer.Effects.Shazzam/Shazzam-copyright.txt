@@ -1,0 +1,5 @@
+Copyright 2008-2012 Walt Ritscher
+http://www.shazzam-tool.com
+
+Licensed under the terms of the Microsoft Public License (MS-PL).
+See license.txt for details.

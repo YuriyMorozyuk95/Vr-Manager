@@ -1,0 +1,9 @@
+{
+  "Media": {
+    "Projection": {
+      "Type": "VrPlayer.Projections.Cube.CubeProjection",
+      "Params": {}
+    },
+    "StereoMode": "OverUnder"
+  }
+}

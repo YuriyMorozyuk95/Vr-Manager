@@ -1,0 +1,201 @@
+﻿<Page x:Class="VrManager.Pages.MainSettingPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:VrManager.Pages"
+      xmlns:Controls="clr-namespace:MahApps.Metro.Controls;assembly=MahApps.Metro"
+      xmlns:convertor="clr-namespace:VrManager.Convertors"
+      xmlns:control="clr-namespace:VrManager.Controls"
+      mc:Ignorable="d"
+      Background="{DynamicResource ColorBackground}"
+      Title="Основные настройки"
+      Name="thisPage"
+      Loaded="Page_Loaded"
+      
+      >
+
+    <Page.Resources>
+        <convertor:BoolToVisiblyConverter x:Key="boolToVisiblyConverter" />
+    </Page.Resources>
+
+    <Grid Margin="50" Grid.Row="1">
+        <Grid.RowDefinitions>
+            <!--Row 0 -->
+            <RowDefinition Height="1*" />
+            <!--Row 1 -->
+            <RowDefinition Height="auto"  />
+            <!--Row 2 -->
+            <RowDefinition Height="auto" />
+            <!--Row 3 -->
+            <RowDefinition Height="auto" />
+            <!--Row 5 -->
+            <RowDefinition Height="auto" />
+            <!--Row 6 -->
+            <RowDefinition Height="auto" />
+            <!--Row 7 -->
+            <RowDefinition Height="auto" />
+            <!--Row 8 -->
+            <RowDefinition Height="auto" />
+            <!--Row 9 -->
+            <RowDefinition Height="auto" />
+            <!--Row 10 -->
+            <RowDefinition Height="1*" />
+            <!--Row 11 -->
+            <RowDefinition Height="auto" />
+            <!--Row 12 -->
+            <RowDefinition Height="1*" />
+
+        </Grid.RowDefinitions>
+
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="auto" />
+            <ColumnDefinition Width="auto" />
+            <ColumnDefinition Width="auto" />
+            <ColumnDefinition Width="auto" />
+            <ColumnDefinition Width="*" />
+        </Grid.ColumnDefinitions>
+
+        <Label HorizontalContentAlignment="Right" 
+               VerticalContentAlignment ="Center"
+               Grid.Column="1"
+               Grid.Row="1" 
+               Name="L1"
+               Margin="5,0,0,0" 
+               Content="Пусть к папке с файлами менеджера:"/>
+
+        <TextBox HorizontalAlignment="Stretch" 
+                     Grid.Column="2"
+                     Grid.Row="1" 
+                   
+                     Width="300"
+                     VerticalAlignment="Center"
+                     IsReadOnly="True"
+                     x:Name="TB_OpenFile"/>
+
+        <Button Grid.Column="3"
+                    Grid.Row="1"          
+                    Style="{StaticResource OpenFileDialog}"                
+                    x:Name="Btn_OpenFileDialog"
+                    Click="Btn_OpenFileDialog_Click"
+                    />
+
+
+        <Button Grid.Column="4"
+                    Grid.Row="1"    
+                    Content="&#xE105;"
+                    Style="{StaticResource OpenFileDialog}"                
+                    x:Name="Btn_SaveNewFolderToFile"
+                    Click="Btn_SaveNewFolderToFile_Click"
+                    HorizontalAlignment="Left"
+                    />
+
+        <TextBlock Style="{StaticResource ValidationMessage}" Grid.Row="2" Grid.Column="1" Grid.ColumnSpan="4" HorizontalAlignment="Center" Text="Выберите папку с файлами и нажмите сохранить" Name="FirstMessage" Visibility="Collapsed"/>
+
+        <Label HorizontalContentAlignment="Right" 
+               VerticalContentAlignment ="Center"
+               Grid.Column="1"
+               Grid.Row="3" 
+                Name="L2"
+               Margin="5,0,0,0" 
+               Content="Время выключения видео/игор: "
+               />
+
+
+
+
+
+        <control:TimePicker Grid.Column="2"
+                            Width="290"
+                            Grid.Row="3" 
+                            x:Name="TP_TimeOut"
+                            VerticalAlignment="Center"/>
+
+
+
+        <Button Grid.Column="3"
+                    Grid.Row="3"    
+                    Content="&#xE105;"
+                    Style="{StaticResource OpenFileDialog}"                
+                    x:Name="Btn_ChangeAllTimeOff"
+                    Click="Btn_ChangeAllTimeOff_Click"
+                    />
+
+        <Controls:ToggleSwitch  x:Name="TS_KioskMode"
+                              Grid.Column="2"
+                              Width="300"
+                              Grid.Row="4"
+                              FontSize="18"
+                              IsChecked="False"  
+                              VerticalAlignment="Center"
+                                OnLabel="Киоск режым включен"
+                                OffLabel="Киоск режым выключен"
+                              />
+
+        <Button Grid.Column="3"
+                    Grid.Row="4"    
+                    Content="&#xE105;"
+                    Style="{StaticResource OpenFileDialog}"                
+                    x:Name="Btn_ChangeKioskMode"
+                    Click="Btn_ChangeKioskMode_Click"
+                    />
+
+        <Label HorizontalContentAlignment="Right" 
+               VerticalContentAlignment ="Center"
+               Grid.Column="1"
+               Grid.Row="5" 
+               Margin="5,0,0,0" 
+                Name="L3"
+               Content="Основной монитор:"/>
+
+        <ComboBox HorizontalAlignment="Stretch" 
+                     Grid.Column="2"
+                     Grid.Row="5" 
+                     Height="30"
+                     VerticalAlignment="Center"
+                     IsReadOnly="True"
+                     x:Name="CB_Monit">
+            <ComboBoxItem IsSelected="True" >Монитор 1</ComboBoxItem>
+            <ComboBoxItem>Монитор 2</ComboBoxItem>
+        </ComboBox>
+
+        <Label HorizontalContentAlignment="Right" 
+               VerticalContentAlignment ="Center"
+               Grid.Column="1"
+               Grid.Row="6" 
+               Margin="5,0,0,0" 
+                Name="L4"
+               Content="Время через сколько включиться реклама на главном окне: "
+               />
+
+        <control:TimePicker Grid.Column="2"
+                            Width="290"
+                            Grid.Row="6"                          
+                            x:Name="TP_TimeAdvertising"
+                            VerticalAlignment="Center"/>
+
+
+
+        <Button Grid.Column="3"
+                    Grid.Row="6"    
+                    Content="&#xE105;"
+                    Style="{StaticResource OpenFileDialog}"                
+                    x:Name="Btn_TimeAdvertising"
+                    Click="Btn_TimeAdvertising_Click"
+                    />
+
+        <Button Grid.Column="3"
+                    Grid.Row="5"    
+                    Content="&#xE105;"
+                    Style="{StaticResource OpenFileDialog}"                
+                    x:Name="Btn_ChangeMonitor"
+                    Click="Btn_ChangeMonitor_Click" 
+                    />
+        <Button Grid.Row="10" Grid.Column="1" Grid.ColumnSpan="3" HorizontalAlignment="Right" Style="{StaticResource BtnMetro}" Padding="10" FontSize="18" Click="TextBlock_MouseRightButtonUp">
+            <TextBlock Text=" Установить дополнительные компоненты" />
+        </Button>
+        <!--TextBlock_MouseRightButtonUp-->
+
+    </Grid>
+</Page>

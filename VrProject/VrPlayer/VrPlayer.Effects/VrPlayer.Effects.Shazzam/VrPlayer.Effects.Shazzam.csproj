@@ -1,0 +1,221 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{E0054E3B-2912-429C-BD44-EB91D1C3B158}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>VrPlayer.Effects.Shazzam</RootNamespace>
+    <AssemblyName>VrPlayer.Effects.Shazzam</AssemblyName>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x86'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\x86\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x86'">
+    <OutputPath>bin\x86\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
+    <Reference Include="PresentationUI, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35" />
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.Composition" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Xaml" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+    <Reference Include="UIAutomationProvider" />
+    <Reference Include="UIAutomationTypes" />
+    <Reference Include="WindowsBase" />
+    <Reference Include="Xceed.Wpf.AvalonDock, Version=2.9.0.0, Culture=neutral, PublicKeyToken=3e4669d2f30244f4, processorArchitecture=MSIL">
+      <HintPath>..\..\..\packages\Extended.Wpf.Toolkit.2.9\lib\net40\Xceed.Wpf.AvalonDock.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Xceed.Wpf.AvalonDock.Themes.Aero, Version=2.9.0.0, Culture=neutral, PublicKeyToken=3e4669d2f30244f4, processorArchitecture=MSIL">
+      <HintPath>..\..\..\packages\Extended.Wpf.Toolkit.2.9\lib\net40\Xceed.Wpf.AvalonDock.Themes.Aero.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Xceed.Wpf.AvalonDock.Themes.Metro, Version=2.9.0.0, Culture=neutral, PublicKeyToken=3e4669d2f30244f4, processorArchitecture=MSIL">
+      <HintPath>..\..\..\packages\Extended.Wpf.Toolkit.2.9\lib\net40\Xceed.Wpf.AvalonDock.Themes.Metro.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Xceed.Wpf.AvalonDock.Themes.VS2010, Version=2.9.0.0, Culture=neutral, PublicKeyToken=3e4669d2f30244f4, processorArchitecture=MSIL">
+      <HintPath>..\..\..\packages\Extended.Wpf.Toolkit.2.9\lib\net40\Xceed.Wpf.AvalonDock.Themes.VS2010.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Xceed.Wpf.DataGrid, Version=2.9.0.0, Culture=neutral, PublicKeyToken=3e4669d2f30244f4, processorArchitecture=MSIL">
+      <HintPath>..\..\..\packages\Extended.Wpf.Toolkit.2.9\lib\net40\Xceed.Wpf.DataGrid.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Xceed.Wpf.Toolkit, Version=2.9.0.0, Culture=neutral, PublicKeyToken=3e4669d2f30244f4, processorArchitecture=MSIL">
+      <HintPath>..\..\..\packages\Extended.Wpf.Toolkit.2.9\lib\net40\Xceed.Wpf.Toolkit.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Bloom\BloomEffect.cs" />
+    <Compile Include="Bloom\BloomPanel.xaml.cs">
+      <DependentUpon>BloomPanel.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Bloom\BloomPlugin.cs" />
+    <Compile Include="ColorKeyAlpha\ColorKeyAlphaEffect.cs" />
+    <Compile Include="ColorKeyAlpha\ColorKeyAlphaPanel.xaml.cs">
+      <DependentUpon>ColorKeyAlphaPanel.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ColorKeyAlpha\ColorKeyAlphaPlugin.cs" />
+    <Compile Include="InvertColor\InvertColorEffect.cs" />
+    <Compile Include="InvertColor\InvertColorPlugin.cs" />
+    <Compile Include="Monochrome\MonochromeEffect.cs" />
+    <Compile Include="Monochrome\MonochromePanel.xaml.cs">
+      <DependentUpon>MonochromePanel.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Monochrome\MonochromePlugin.cs" />
+    <Compile Include="OldMovie\OldMovieEffect.cs" />
+    <Compile Include="OldMovie\OldMoviePlugin.cs" />
+    <Compile Include="ParametricEdgeDetection\ParametricEdgeDetectionEffect.cs" />
+    <Compile Include="ParametricEdgeDetection\ParametricEdgeDetectionPanel.xaml.cs">
+      <DependentUpon>ParametricEdgeDetectionPanel.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ParametricEdgeDetection\ParametricEdgeDetectionPlugin.cs" />
+    <Compile Include="Pixelate\PixelateEffect.cs" />
+    <Compile Include="Pixelate\PixelatePanel.xaml.cs">
+      <DependentUpon>PixelatePanel.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pixelate\PixelatePlugin.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SketchPencilStroke\SketchPencilStrokeEffect.cs" />
+    <Compile Include="SketchPencilStroke\SketchPencilStrokePanel.xaml.cs">
+      <DependentUpon>SketchPencilStrokePanel.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="SketchPencilStroke\SketchPencilStrokePlugin.cs" />
+    <Compile Include="ToonShader\ToonShaderEffect.cs" />
+    <Compile Include="ToonShader\ToonShaderPanel.xaml.cs">
+      <DependentUpon>ToonShaderPanel.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ToonShader\ToonShaderPlugin.cs" />
+  </ItemGroup>
+  <ItemGroup />
+  <ItemGroup>
+    <None Include="Bloom\Bloom.fx" />
+    <None Include="InvertColor\InvertColor.fx" />
+    <None Include="OldMovie\OldMovie.fx" />
+    <None Include="packages.config" />
+    <None Include="ParametricEdgeDetection\ParametricEdgeDetection.fx" />
+    <Resource Include="ToonShader\ToonShaderEffect.ps" />
+    <Resource Include="SketchPencilStroke\SketchPencilStrokeEffect.ps" />
+    <Resource Include="ParametricEdgeDetection\ParametricEdgeDetectionEffect.ps" />
+    <None Include="SketchPencilStroke\SketchPencilStroke.fx" />
+    <None Include="ToonShader\ToonShader.fx" />
+    <Resource Include="OldMovie\OldMovieEffect.ps" />
+    <Resource Include="InvertColor\InvertColorEffect.ps" />
+    <Resource Include="Pixelate\PixelateEffect.ps" />
+    <Resource Include="Monochrome\MonochromeEffect.ps" />
+    <Resource Include="Bloom\BloomEffect.ps" />
+    <None Include="Monochrome\Monochrome.fx" />
+    <None Include="Pixelate\Pixelate.fx" />
+    <None Include="ColorKeyAlpha\ColorKeyAlpha.fx" />
+    <Resource Include="ColorKeyAlpha\ColorKeyAlphaEffect.ps" />
+  </ItemGroup>
+  <ItemGroup>
+    <Page Include="ColorKeyAlpha\ColorKeyAlphaPanel.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="ParametricEdgeDetection\ParametricEdgeDetectionPanel.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="SketchPencilStroke\SketchPencilStrokePanel.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="ToonShader\ToonShaderPanel.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+  </ItemGroup>
+  <ItemGroup>
+    <Page Include="Bloom\BloomPanel.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Monochrome\MonochromePanel.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Pixelate\PixelatePanel.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\VrPlayer.Contracts\VrPlayer.Contracts.csproj">
+      <Project>{463D0CFD-915F-41ED-9807-D509EBE1124C}</Project>
+      <Name>VrPlayer.Contracts</Name>
+      <Private>False</Private>
+    </ProjectReference>
+    <ProjectReference Include="..\..\VrPlayer.Helpers\VrPlayer.Helpers.csproj">
+      <Project>{D4A54A70-3BB5-4BE5-BEDB-3A41B6C43033}</Project>
+      <Name>VrPlayer.Helpers</Name>
+      <Private>False</Private>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <PropertyGroup>
+    <PostBuildEvent>xcopy "$(TargetDir)*.*" "$(SolutionDir)VrPlayer\$(OutDir)\Effects\$(TargetName)\" /y</PostBuildEvent>
+  </PropertyGroup>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

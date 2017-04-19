@@ -1,0 +1,90 @@
+﻿<Page x:Class="VrManager.Pages.StartUpPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+      xmlns:Controls="clr-namespace:MahApps.Metro.Controls;assembly=MahApps.Metro"
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:VrManager.Pages"
+      mc:Ignorable="d" 
+      Title="Главное меню"
+      Background="Transparent"
+      Loaded="Page_Loaded">
+
+
+
+    <WrapPanel Grid.Row="1" HorizontalAlignment="Center" VerticalAlignment="Center" MaxWidth="1000">
+
+        <Controls:Tile x:Name="SettingTile"
+                       Title="Настройки"  
+                       Margin="15"
+                       Click="SettingTile_Click"
+                       Style="{StaticResource TileStyle}">
+            <TextBlock Style="{StaticResource TileIcon}" 
+                         Text="&#xE713;" />
+        </Controls:Tile>
+
+        <Controls:Tile x:Name="Videos360"
+                       Title="Видео 360"  
+                       Margin="15"
+                       Click="Videos360_Click"
+                       Style="{StaticResource TileStyle}">
+            <TextBlock Style="{StaticResource TileIcon}" 
+                         Text="&#xE786;" />
+        </Controls:Tile>
+
+        <Controls:Tile x:Name="Videos5D"
+                       Title="Видео 5D"  
+                       Margin="15"
+                       Click="Videos5D_Click"
+                       Style="{StaticResource TileStyle}">
+            <TextBlock Style="{StaticResource TileIcon}" 
+                         Text="&#xE786;" />
+        </Controls:Tile>
+
+        <Controls:Tile x:Name="Games"
+                       Title="Игры"  
+                       Style="{StaticResource TileStyle}"
+                       Margin="15"
+                       Click="Games_Click">
+            <TextBlock Style="{StaticResource TileIcon}" 
+                         Text="&#xE7FC;" />
+        </Controls:Tile>
+
+        <Controls:Tile x:Name="Statistic"
+                       Title="Просмотр статистики"  
+                       Margin="15"
+                       Click="Statistic_Click"
+                           Style="{StaticResource TileStyle}">
+            <TextBlock Style="{StaticResource TileIcon}" 
+                         Text="&#xE912;" />
+        </Controls:Tile>
+
+        <Controls:Tile x:Name="Data"
+                       Title="Управления данными"  
+                       Margin="15"
+                       Click="Data_Click"
+                           Style="{StaticResource TileStyle}">
+            <TextBlock Style="{StaticResource TileIcon}" 
+                         Text="&#xE12A;" />
+        </Controls:Tile>
+
+        <Controls:Tile x:Name="SingIn"
+                       Title="Войти как администратор"  
+                       Margin="15"
+                       Click="SingIn_Click"
+                       Style="{StaticResource TileStyle}">
+            <TextBlock Style="{StaticResource TileIcon}" 
+                         Text="&#xE785;" />
+        </Controls:Tile>
+
+        <Controls:Tile x:Name="SingOut"
+                       Title="Выйти как администратор"  
+                       Margin="15"
+                       Click="SingOut_Click"
+                           Style="{StaticResource TileStyle}">
+            <TextBlock Style="{StaticResource TileIcon}" 
+                         Text="&#xE1F6;" />
+        </Controls:Tile>
+
+    </WrapPanel>
+</Page>

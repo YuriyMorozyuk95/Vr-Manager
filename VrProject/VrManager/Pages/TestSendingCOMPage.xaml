@@ -1,0 +1,20 @@
+﻿<Page x:Class="VrManager.Pages.SendingCOMTestPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:VrManager.Pages"
+      mc:Ignorable="d" 
+
+      Title="SendingCOM">
+
+    <StackPanel>
+        <StackPanel Orientation="Horizontal"> 
+            <Button HorizontalAlignment="Center" Name="startSend" Content="StartSend" Margin="20" Click="startSend_Click"/>
+            <Button HorizontalAlignment="Center" Name="BtnPause" Content="Pause" Margin="20" Click="BtnPause_Click"/>
+            <Button HorizontalAlignment="Center" Name="BtnReusume" Content="Reusume" Margin="20" Click="BtnReusume_Click"/>
+            <Button HorizontalAlignment="Center" Name="BtnStop" Content="Stop" Margin="20" Click="BtnStop_Click"/>
+        </StackPanel>
+        <TextBox Height="500"  TextWrapping="Wrap" AcceptsReturn="True" Name="Terminal"/>
+    </StackPanel>
+</Page>

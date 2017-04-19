@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<xmp_definitions xmlns:ui="http://ns.adobe.com/xmp/fileinfo/ui/">
+
+	<xmp_schema prefix="VRPlayer" namespace="http://ns.vrplayer.tv/" label="VR Player Preset (http://vrplayer.tv)" description="This panel contains VR Player preset in json format.">
+		<ui:separator/>
+		<xmp_property name="Preset" category="external" label="Preset" type="text" />
+	</xmp_schema>
+
+</xmp_definitions>

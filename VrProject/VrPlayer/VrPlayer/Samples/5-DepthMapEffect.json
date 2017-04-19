@@ -1,0 +1,17 @@
+{
+  "Media": {
+    "Projection": {
+      "Type": "VrPlayer.Projections.Plane.PlaneProjection",
+      "Params": {
+        "Ratio": 1.33
+      }
+    },
+    "Effect": {
+      "Type": "VrPlayer.Effects.DepthMapOverUnder.DepthMapOverUnderEffect",
+      "Params": {
+        "MaxOffset": -0.025
+      }
+    },
+    "StereoMode": "OverUnder"
+  }
+}

@@ -1,0 +1,33 @@
+﻿{
+  "Media": {
+    "Projection": {
+      "Type": "VrPlayer.Projections.Plane.PlaneProjection",
+      "Params": {
+        "Ratio": 1.33
+      }
+    },
+    "StereoMode": "Mono"
+  },
+  "Device": {
+    "Distortion": {
+      "Type": "VrPlayer.Distortions.Barrel.BarrelEffect",
+      "Params": {
+        "Factor": 1.19422954202657,
+        "XCenter": 0.5,
+        "YCenter": 0.5,
+        "BlueOffset": 0.0,
+        "RedOffset": 0.0
+      }
+    },
+    "Tracker": {
+      "Type": "VrPlayer.Trackers.MouseTracker.MouseTracker",
+      "Params": {
+        "Sensitivity": 1.0
+      }
+    },
+    "DisplayMode": "SideBySide",
+    "FieldOfView": 110,
+    "ViewportsHorizontalOffset": 72,
+    "ViewportsVerticalOffset": 0
+  }
+}

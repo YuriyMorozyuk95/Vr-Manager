@@ -1,0 +1,5 @@
+Copyright darress
+http://code.google.com/p/moveframework/
+
+Licensed under the terms of the GPLv2 license .
+See PsMove-license.txt for details.

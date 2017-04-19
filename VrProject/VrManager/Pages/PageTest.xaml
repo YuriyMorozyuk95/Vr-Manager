@@ -1,0 +1,17 @@
+﻿<Page x:Class="VrManager.Pages.PageTest"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:VrManager.Pages"
+      xmlns:Controls="clr-namespace:VrManager.Controls"
+      mc:Ignorable="d" 
+      d:DesignHeight="1024" d:DesignWidth="1024"
+      Title="PageTest">
+
+    <DockPanel>
+        <Controls:Banner DockPanel.Dock="Bottom" Height="300" x:Name="ban1" />
+        <Controls:Banner  DockPanel.Dock="Top" Height="200"  x:Name="ban2" />
+        <Controls:Banner   x:Name="ban3" />
+    </DockPanel>
+</Page>

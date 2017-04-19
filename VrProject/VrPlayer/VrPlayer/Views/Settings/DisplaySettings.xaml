@@ -1,0 +1,43 @@
+﻿<UserControl x:Class="VrPlayer.Views.Settings.DisplaySettings"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             mc:Ignorable="d">
+    <StackPanel Orientation="Vertical" Margin="16">
+        <Label Content="Display" FontSize="18" />
+        <Border BorderBrush="Silver" BorderThickness="1" Height="1" Width="auto" Margin="0,0,0,24" />
+        <TextBlock Text="Viewports" FontWeight="Bold" Margin="0,0,0,8"></TextBlock>
+        <Grid Margin="0,0,0,16">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="Auto" />
+                <ColumnDefinition Width="*" MinWidth="200" />
+                <ColumnDefinition Width="50" />
+            </Grid.ColumnDefinitions>
+            <Label Grid.Column="0" Grid.Row="0" Content="Horizontal offset:"></Label>
+            <Slider Grid.Column="1" Grid.Row="0" Value="{Binding Path=Config.ViewportsHorizontalOffset}" Minimum="-1000" Maximum="1000"></Slider>
+            <TextBox Grid.Column="2" Grid.Row="0" Text="{Binding Path=Config.ViewportsHorizontalOffset}"></TextBox>
+            <Label Grid.Column="0" Grid.Row="1" Content="Vertical offset:"></Label>
+            <Slider Grid.Column="1" Grid.Row="1" Value="{Binding Path=Config.ViewportsVerticalOffset}" Minimum="-500" Maximum="500"></Slider>
+            <TextBox Grid.Column="2" Grid.Row="1" Text="{Binding Path=Config.ViewportsVerticalOffset}"></TextBox>
+        </Grid>
+        <TextBlock Text="Camera" FontWeight="Bold" Margin="0,0,0,8"></TextBlock>
+        <Grid Margin="0,0,0,16">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto" />
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="Auto" />
+                <ColumnDefinition Width="*" MinWidth="200" />
+                <ColumnDefinition Width="50" />
+            </Grid.ColumnDefinitions>
+            <Label Grid.Column="0" Grid.Row="0" Content="Field of view (FOV):"></Label>
+            <Slider Grid.Column="1" Grid.Row="0" Value="{Binding Path=Config.CameraFieldOfView}" Minimum="0" Maximum="180"></Slider>
+            <TextBox Grid.Column="2" Grid.Row="0" Text="{Binding Path=Config.CameraFieldOfView}" ></TextBox>
+        </Grid>
+    </StackPanel>
+</UserControl>

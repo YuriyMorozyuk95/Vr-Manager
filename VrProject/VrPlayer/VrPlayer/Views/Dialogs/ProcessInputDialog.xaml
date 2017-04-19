@@ -1,0 +1,16 @@
+﻿<Window x:Class="VrPlayer.Views.Dialogs.ProcessInputDialog"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Open process" Icon="/Medias/Nuvola/16x16/window_list.png" ResizeMode="NoResize" ShowInTaskbar="False" SizeToContent="WidthAndHeight" Topmost="True" WindowStartupLocation="CenterScreen" Loaded="UrlInputDialog_OnLoaded">
+    <StackPanel Margin="5">
+        <StackPanel Orientation="Horizontal" Margin="5">
+            <Label Content="Process:" />
+            <ComboBox x:Name="ResponseComboBox" Width="500" ItemsSource="{Binding Path=Processes}" DisplayMemberPath="MainWindowTitle" SelectedValuePath="." SelectedIndex="0"/>
+        </StackPanel>
+        <StackPanel Orientation="Horizontal" HorizontalAlignment="Right">
+            <Button Content="OK" Click="OnOkButtonClick" Width="50" Height="25" Margin="5" />
+            <Button Content="Cancel" Click="OnCancelButtonClick" Width="50" Height="25"  Margin="5" />
+        </StackPanel>
+    </StackPanel>
+    
+</Window>

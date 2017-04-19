@@ -1,0 +1,23 @@
+﻿<UserControl x:Class="VrManager.Controls.TimePicker"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:VrManager.Controls"
+             mc:Ignorable="d" >
+
+    <StackPanel Orientation="Horizontal">
+        <!--<StackPanel>
+            <Label Content="Чесы"/>
+            <ComboBox Name="HourBox" Width="80"  />
+        </StackPanel>-->
+        <StackPanel>
+            <Label Content="Минуты"/>
+            <ComboBox Name="MinuteBox" Width="80" />
+        </StackPanel>
+        <StackPanel>
+            <Label Content="Секунды"/>
+            <ComboBox Name="SecondBox" Width="80"/>
+        </StackPanel>
+    </StackPanel>
+</UserControl>

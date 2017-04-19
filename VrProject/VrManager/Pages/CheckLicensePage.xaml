@@ -1,0 +1,89 @@
+﻿<Page x:Class="VrManager.Pages.CheckLicensePage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:VrManager.Pages"
+      mc:Ignorable="d" 
+      Loaded="Page_Loaded"
+      Title="Проверка лицензии">
+
+
+        <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center">
+            <TextBlock Style="{StaticResource InputTextBlock}" Text="Файл лицензии:"/>
+            <StackPanel Orientation="Horizontal">
+                <TextBox x:Name="TB_LicensePath"
+                         HorizontalAlignment="Center" 
+                         Height="25"
+                           />
+                <Button  Style="{StaticResource OpenFileDialog}"
+                         Name="Btn_FilePicker"
+                         Click="Btn_FilePicker_Click"
+                         
+                         />
+            </StackPanel>
+            
+        <TextBlock Style="{StaticResource ValidationMessage}" Name="LicenseValidMessage" />
+
+
+        <Button x:Name="Btn_CreateFileConfig" 
+                    Click="Btn_CreateFileConfig_Click" 
+                    Margin="0,50"
+                    Style="{StaticResource MetroButton}"
+                    Visibility="Visible"
+                    TabIndex="2">
+
+            <Button.Content>
+                <StackPanel HorizontalAlignment="Center"
+                                                 Orientation="Horizontal"
+                                                 VerticalAlignment="Center"
+                                                 Background="Transparent">
+
+                    <TextBlock Foreground="{DynamicResource ColorForeground}"
+                                           Style="{StaticResource TileIcon}"
+                                            
+                                           FontSize="34"
+                                           Text="&#xE1A5;"
+                                           Margin="5,5,20,5"/>
+                    <TextBlock FontFamily="Segoue UI"
+                                           
+                                               FontSize="14"   
+                                               VerticalAlignment="Center"
+                                               Foreground="{DynamicResource ColorForeground}"
+                                               Text="Создать файл конфигурации для получения лицензии"/>
+                </StackPanel>
+            </Button.Content>
+        </Button>
+
+        <Button x:Name="Btn_CheckLicense" 
+                    Click="Btn_CheckLicense_Click" 
+                    Margin="0,10"
+                    Style="{StaticResource MetroButton}"
+                    Visibility="Visible"
+                    TabIndex="2">
+
+            <Button.Content>
+                <StackPanel HorizontalAlignment="Center"
+                                                 Orientation="Horizontal"
+                                                 VerticalAlignment="Center"
+                                                 Background="Transparent">
+
+                    <TextBlock Foreground="{DynamicResource ColorForeground}"
+                                           Style="{StaticResource TileIcon}"
+                                           FontSize="34"
+                                           Text="&#xE8D7;"
+                                           Margin="5,5,20,5"/>
+                    <TextBlock FontFamily="Segoue UI"
+                                           
+                                               FontSize="14"   
+                                               VerticalAlignment="Center"
+                                               Foreground="{DynamicResource ColorForeground}"
+                                               Text="Войти"/>
+
+                </StackPanel>
+            </Button.Content>
+        </Button>
+
+    </StackPanel>
+
+</Page>

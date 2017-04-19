@@ -1,0 +1,11 @@
+﻿<UserControl x:Class="VrPlayer.Medias.Gdi.GdiPanel"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             mc:Ignorable="d">
+<StackPanel Orientation="Vertical" Margin="16">
+        <TextBlock Text="Info" FontWeight="Bold" Margin="0,0,0,8"></TextBlock>
+        <TextBlock TextWrapping="Wrap" Text="Current GDI screen capture implementation is a proof of concept. Performances are not optimized and the result may be slow." Margin="0,0,0,16"></TextBlock>
+    </StackPanel>
+</UserControl>
